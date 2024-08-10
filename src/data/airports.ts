@@ -3,6 +3,7 @@
  * I used the database that the current lookup API (airportdb.io) was based off of (found here: https://ourairports.com/data/).
  * I parsed through the data using python to create this list of medium and large US airports.
  * P.S. This is used only for the autocomplete and API calls are still used for data.
+ * NOTE: The API required the full ICAO Code so some are 3-digit while other are longer
 */
 export const airports= [
 "Aleknagik / New Airport 5A8",
