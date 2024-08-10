@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { Paper, Stack } from '@mui/material';
 import SearchForm from './SearchForm';
 import DistanceForm from './DistanceForm';
@@ -38,7 +38,7 @@ const Main = () => {
     setDistance(d);
   };
 
-  const updateDistanceAndPositions = useCallback(() => {
+  const updateDistanceAndPositions = () => {
     if ((departureCode != null) && (arrivalCode != null)){
 
       const depApi = 'https://airportdb.io/api/v1/airport/' + departureCode + '?apiToken=' + apiToken;
@@ -59,12 +59,13 @@ const Main = () => {
         })
       )
     }
-  }, [departure, arrival]);
+  };
 
 
   useEffect(() => {
     updateDistanceAndPositions();
-  }, [departure, arrival, updateDistanceAndPositions]);
+    // eslint-disable-next-line
+  }, [departure, arrival]);
 
   return (
   <div className='main'>
