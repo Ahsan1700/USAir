@@ -63,6 +63,7 @@ const Main = () => {
 
   useEffect(() => {
     updateDistanceAndPositions();
+    // NOTE: This is used because a 'Warning' is stopping the deployment on Netifly
     // eslint-disable-next-line
   }, [departure, arrival]);
 
