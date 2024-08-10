@@ -1,4 +1,4 @@
-import { Grid, Autocomplete, Typography, TextField, Button } from '@mui/material';
+import { Grid, Autocomplete, Typography, TextField } from '@mui/material';
 import { airports } from '../data/airports';
 import { SearchProps } from '../data/interfaces';
 

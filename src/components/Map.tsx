@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import { LoadScript, GoogleMap, MarkerF, PolylineF } from '@react-google-maps/api';
 import { MapProps } from '../data/interfaces';

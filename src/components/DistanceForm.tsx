@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import CountUp from 'react-countup';
 import { DistanceProps } from '../data/interfaces';
 
