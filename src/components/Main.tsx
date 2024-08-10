@@ -61,9 +61,7 @@ const Main = () => {
     }
   };
 
-  useEffect(()=>{
-    updateDistanceAndPositions();  
-  },[departure, arrival]);
+  useEffect(updateDistanceAndPositions,[departure, arrival]);
 
   return (
   <div className='main'>
