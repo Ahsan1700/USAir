@@ -13,7 +13,6 @@ const Main = () => {
   const [deperaturePosition, setDeparturePosition] = useState<google.maps.LatLng | null>(null);
   const [arrivalPosition, setArrivalPosition] = useState<google.maps.LatLng | null>(null);
   const [distance, setDistance] = useState<number>(0);
-  const apiToken = process.env.REACT_APP_AIRDB_TOKEN;
 
   const updatePositions = (depLat:number, depLng:number, arrLat:number, arrLng:number) => {
     let depPos = new google.maps.LatLng(depLat, depLng);
@@ -41,8 +40,8 @@ const Main = () => {
   const updateDistanceAndPositions = () => {
     if ((departureCode != null) && (arrivalCode != null)){
 
-      const depApi = 'https://airportdb.io/api/v1/airport/' + departureCode + '?apiToken=' + apiToken;
-      const arrApi = 'https://airportdb.io/api/v1/airport/' + arrivalCode + '?apiToken=' + apiToken;
+      const depApi = 'https://airportdb.io/api/v1/airport/' + departureCode + '?apiToken=' + process.env.REACT_APP_AIRDB_TOKEN;
+      const arrApi = 'https://airportdb.io/api/v1/airport/' + arrivalCode + '?apiToken=' + process.env.REACT_APP_AIRDB_TOKEN;
 
       const getDep = axios.get(depApi);
       const getArr = axios.get(arrApi);

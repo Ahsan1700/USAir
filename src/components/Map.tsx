@@ -13,8 +13,6 @@ const center = {
 };
 
 const Map = ({departurePosition, departureCode, arrivalPosition, arrivalCode} : MapProps) => {
-  const apiToken = process.env.REACT_APP_GMAP_TOKEN;
-
   const createPolyLine = () =>{
     if (departurePosition != null && arrivalPosition != null) {
       let flightPlanCoordinates = [departurePosition, arrivalPosition];
@@ -37,7 +35,7 @@ const Map = ({departurePosition, departureCode, arrivalPosition, arrivalCode} : 
 
   return (
     <Box justifyContent='center'>
-      <LoadScript googleMapsApiKey={apiToken!}>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GMAP_TOKEN!}>
           <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={3}>
             {departurePosition && departureCode? <MarkerF position={departurePosition} title={departureCode}></MarkerF> : <></>}
             {arrivalPosition && arrivalCode ? <MarkerF position={arrivalPosition} title={arrivalCode}></MarkerF> : <></>}
