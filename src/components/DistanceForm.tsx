@@ -13,7 +13,7 @@ const DistanceForm = ({distance}: DistanceProps) => {
           end={distance}
           decimals={2}
           duration={1} 
-          suffix=' NM'
+          suffix=' nmi'
           />
         </b>
       </Stack>
